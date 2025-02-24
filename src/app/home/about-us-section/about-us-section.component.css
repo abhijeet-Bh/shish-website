@@ -1,0 +1,11 @@
+.section-heading{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  margin-top: 50px;
+  width: 80px;
+  height: 4px;
+  background-color: #146ABB; /* Underline color */
+  transform: translateX(-50%);
+}
