@@ -1,0 +1,27 @@
+<div class="absolute top-0 left-0 w-full h-[728px] overflow-hidden">
+  <!-- Slide Wrapper -->
+  <div class="flex w-full h-full transition-transform duration-700 ease-in-out" [ngStyle]="{ transform: getTransform() }">
+    <!-- Individual Slides -->
+    <div *ngFor="let slide of slides" class="w-full flex-shrink-0 h-full relative">
+      <img [src]="slide.image" alt="Slide Image" class="w-full h-full object-cover" />
+
+      <!-- Content Overlay (Non-Blocking) -->
+      <div class="absolute inset-0 bg-gradient-to-tr from-primary-dark/70 to-primary-dark/0 flex flex-col items-start justify-center px-12 pointer-events-none">
+        <h2 class="text-[56px] w-[720px] ml-16 font-semibold text-white mb-2">{{ slide.heading }}</h2>
+        <p class="text-lg ml-16 italic text-secondary-light mb-4">{{ slide.subheading }}</p>
+        <a [routerLink]="slide.buttonLink" class="px-6 py-3 ml-16 text-md flex justify-between items-center space-x-2 bg-primary-dark text-white rounded-lg shadow-lg hover:bg-purple-700 transition-all pointer-events-auto">
+          <p>{{ slide.buttonText }}</p>
+          <img src="assets/icons/right-arrow.svg" class="w-[23px]" alt="arrow icon"/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Controls (Above Overlay) -->
+  <button (click)="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-transparent bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 z-10">
+    &#10094;
+  </button>
+  <button (click)="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80 z-10">
+    &#10095;
+  </button>
+</div>

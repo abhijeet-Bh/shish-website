@@ -1,0 +1,38 @@
+<nav
+  [class]="isScrolled ? 'bg-primary-dark shadow-md' : 'bg-transparent'"
+  class="fixed top-0 left-0 w-full max-[1340px] z-50 transition-all duration-300"
+>
+  <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <a routerLink="/">
+      <img
+        src="assets/images/logo.png"
+        alt="Logo"
+        [ngStyle]="{ width: isScrolled ? '50px' : '100px', height: isScrolled ? '50px' : '100px' }"
+        class="transition-all duration-300"
+      />
+    </a>
+
+    <!-- Navigation Links -->
+    <ul class="flex space-x-6 text-sm font-semibold text-white">
+      <li>
+        <a routerLink="/" routerLinkActive="active-link">Home</a>
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="active-link">About</a>
+      </li>
+      <li>
+        <a routerLink="/services" routerLinkActive="active-link">Services</a>
+      </li>
+      <li>
+        <a routerLink="/portfolio" routerLinkActive="active-link">Portfolio</a>
+      </li>
+      <li>
+        <a routerLink="/blog" routerLinkActive="active-link">Blog</a>
+      </li>
+      <li class="button">
+        <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

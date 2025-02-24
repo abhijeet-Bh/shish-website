@@ -1,0 +1,14 @@
+.active-link {
+  position: relative;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 50%;
+  height: 2px;
+  background-color: #A1E3F9; /* Underline color */
+  transform: translateX(-50%);
+}

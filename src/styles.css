@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+  --color-primary-dark: #146ABB;
+  --color-primary-light: #F2F9FF;
+  --color-secondary-dark: #578FCA;
+  --color-secondary-light: #A1E3F9;
+  --color-grey: #C7C7C7;
+  /* ... */
+}
+
+body {
+  font-family: "Plus Jakarta Sans", serif;
+}
