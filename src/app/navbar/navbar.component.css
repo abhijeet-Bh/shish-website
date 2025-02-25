@@ -5,7 +5,7 @@
 .active-link::after {
   content: "";
   position: absolute;
-  left: 50%;
+  left: 35%;
   bottom: -4px;
   width: 50%;
   height: 2px;
