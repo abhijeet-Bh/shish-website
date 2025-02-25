@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import {NgStyle} from "@angular/common";
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import { NgStyle } from "@angular/common";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +15,24 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class NavbarComponent {
   isScrolled = false;
+  isHomePage = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.isHomePage = this.router.url === '/';
+    });
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
+  }
+
+  getLogoSize() {
+    if (this.isHomePage && !this.isScrolled) {
+      return { width: '100px', height: '100px' };
+    } else {
+      return { width: '50px', height: '50px' };
+    }
   }
 }
