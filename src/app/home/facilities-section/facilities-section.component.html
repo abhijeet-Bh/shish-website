@@ -1,0 +1,17 @@
+<div class="mt-16 flex flex-col items-center justify-center">
+  <h1 class="text-3xl text-primary-dark font-medium mb-16 relative text-center after:content-[''] after:block after:w-20 after:h-1 after:bg-primary-dark after:mt-2 after:mx-auto after:rounded-full">
+    Facilities</h1>
+  <div class="grid grid-cols-4 grid-flow-row-dense gap-[24px] max-w-[1340px]">
+    @for (capability of capabilities; track capability.id) {
+      <div class="w-64 h-64 relative rounded-lg overflow-hidden bg-white shadow-lg">
+        <!-- Background Image -->
+        <img src="{{capability.image}}" alt="Card Image" class="w-full h-full object-cover" />
+
+        <!-- Bottom Overlay with Text -->
+        <div class="absolute bottom-0 left-0 w-full bg-secondary-dark/80 bg-opacity-60 text-white p-4">
+          <h3 class="text-lg text-center">{{ capability.text }}</h3>
+        </div>
+      </div>
+    }
+  </div>
+</div>
