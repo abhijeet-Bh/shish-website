@@ -1,0 +1,140 @@
+<div
+  class="w-screen h-[646px] mt[-50px] bg-secondary-dark flex justify-between"
+>
+  <div class="mt-[200px] ml-24">
+    <h1
+      class="text-5xl text-white font-medium mb-6 relative after:content-[''] after:block after:w-28 after:h-0.5 after:bg-white after:mt-4 after:rounded-full"
+    >
+      Our Facilities
+    </h1>
+    <p class="text-lg font-semibold text-white max-w-[590px]">
+      Commitment to Excellence
+    </p>
+    <p class="text-sm text-white mt-4 max-w-[500px]">
+      The advanced facilities at Shish Advanced Composites are meticulously
+      designed to deliver precision engineering solutions and address the
+      dynamic needs of composite manufacturing. Our unwavering focus on
+      stringent quality control and continuous technological innovation allows
+      us to excel in providing cutting-edge composite products for a wide range
+      of industries, fostering growth and technological advancement.
+    </p>
+  </div>
+  <img src="assets/images/facilities-header.png" />
+</div>
+<div class="flex justify-start mt-24">
+  <img src="assets/images/factory-space-overview.png" class="w-[708px]" />
+  <div class="ml-8">
+    <h1
+      class="text-4xl text-primary-dark font-medium mb-6 relative after:content-[''] after:block after:w-28 after:h-0.5 after:bg-primary-dark after:mt-4 after:rounded-full"
+    >
+      Factory Space Overview
+    </h1>
+    <ul class="text-md text-primary-dark list-disc ml-8">
+      <li>Total Built-Up Area: 6,000 m²</li>
+      <li>Number of Floors: 3</li>
+      <li>Additional Expansion Space: 10,000 m²</li>
+    </ul>
+  </div>
+</div>
+<div class="flex justify-between mt-24">
+  <div class="ml-14">
+    <h1
+      class="text-4xl text-primary-dark font-medium mb-6 relative after:content-[''] after:block after:w-28 after:h-0.5 after:bg-primary-dark after:mt-4 after:rounded-full"
+    >
+      Clean Room Specifications
+    </h1>
+    <ul class="text-md text-primary-dark list-disc ml-8">
+      <li>Class 7 Floor Area: 175 m²</li>
+      <li>
+        Class 8 Floor Area: 600 m² (Upgradable to Class 7 within a short
+        timeframe)
+      </li>
+      <li class="font-semibold mt-3">Key Features:</li>
+      <ul class="text-md text-primary-dark list-disc ml-8">
+        <li>Integrated with airlock chambers and secure pass-through boxes</li>
+        <li>Fitted with a dust particle counter for regular monitoring</li>
+        <li>Continuous environmental monitoring system in operation</li>
+      </ul>
+    </ul>
+  </div>
+  <img src="assets/images/clean-room-speci.png" class="w-[708px]" />
+</div>
+<div class="mt-24 py-14 bg-grey/20">
+  <div class="flex flex-col items-center">
+    <h1
+      class="text-3xl text-primary-dark font-medium mb-6 relative text-center after:content-[''] after:block after:w-20 after:h-1 after:bg-primary-dark after:mt-2 after:mx-auto after:rounded-full"
+    >
+      Tooling, Jigs & Fixtures
+    </h1>
+    <p class="text-sm text-primary-dark max-w-[900px] text-center">
+      Our custom-designed tooling, jigs, and fixtures are built to meet exact
+      customer requirements, ensuring unparalleled precision and performance.
+    </p>
+    <p class="text-md mt-8 font-semibold text-primary-dark max-w-[590px]">
+      Materials tailored to application needs:
+    </p>
+  </div>
+  <div class="mt-14 flex flex-col items-center justify-center">
+    <div class="flex gap-[24px] flex-wrap justify-center max-w-[1340px]">
+      @for (capability of equipments; track capability.id) {
+      <div
+        class="w-[317px] h-[445px] flex flex-col overflow-hidden bg-secondary-dark shadow-lg"
+      >
+        <!-- Background Image -->
+        <img
+          src="{{ capability.image }}"
+          alt="Card Image"
+          class="w-full h-[240px] object-contain bg-white"
+        />
+
+        <!-- Bottom Overlay with Text -->
+        <div class="text-white p-4 w-full">
+          <h3 class="text-lg text-left">{{ capability.text }}</h3>
+          <p class="text-[9px] text-left pb-2">{{ capability.subhead }}</p>
+
+          <ul class="text-md text-primary-dark list-disc ml-4">
+            @for (item of capability.items; track $index) {
+            <li class="text-sm text-white">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+<div class="py-24">
+  <h1
+    class="text-3xl text-primary-dark font-medium mb-6 relative text-center after:content-[''] after:block after:w-20 after:h-1 after:bg-primary-dark after:mt-2 after:mx-auto after:rounded-full"
+  >
+    Testing & Measurement Systems
+  </h1>
+  <div class="mt-14 flex flex-col items-center justify-center">
+    <div class="flex gap-[24px] flex-wrap justify-center max-w-[1340px]">
+      @for (test of testings; track test.id) {
+      <div
+        class="w-[317px] h-[445px] flex flex-col overflow-hidden bg-secondary-dark shadow-lg"
+      >
+        <!-- Background Image -->
+        <img
+          src="{{ test.image }}"
+          alt="Card Image"
+          class="w-full h-[240px] object-contain bg-white"
+        />
+
+        <!-- Bottom Overlay with Text -->
+        <div class="text-white p-4 w-full">
+          <h3 class="text-lg text-left">{{ test.text }}</h3>
+          <p class="text-[9px] text-left pb-2">{{ test.subhead }}</p>
+
+          <ul class="text-md text-primary-dark list-disc ml-4">
+            @for (item of test.items; track $index) {
+            <li class="text-sm text-white">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

@@ -57,7 +57,7 @@ export class OurCapabilitiesPageComponent {
     { id: 6, image: 'assets/images/invar.jpg', text: 'Invar' },
   ];
 
-  //toolings
+  //composites
   composites = [
     {
       id: 1,
